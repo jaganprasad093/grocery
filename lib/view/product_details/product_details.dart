@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery/constants/color_constants.dart';
+import 'package:grocery/view/checkout_screen/checkout.dart';
 import 'package:grocery/view/product_details/widgets/details.dart';
 
 class Product_details extends StatelessWidget {
@@ -160,14 +161,23 @@ class Product_details extends StatelessWidget {
                 SizedBox(
                   width: 20,
                 ),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 90, vertical: 15),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color_Constants.primarygreen),
-                  child: Text(
-                    "Add to cart",
-                    style: TextStyle(color: Color_Constants.primaryWhite),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CheckoutPage(),
+                        ));
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 90, vertical: 15),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color_Constants.primarygreen),
+                    child: Text(
+                      "Add to cart",
+                      style: TextStyle(color: Color_Constants.primaryWhite),
+                    ),
                   ),
                 ),
               ],
